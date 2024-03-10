@@ -14,16 +14,11 @@ import static org.apache.http.HttpStatus.SC_FORBIDDEN;
 import static org.hamcrest.Matchers.equalTo;
 
 @RunWith(Parameterized.class)
-public class CreateUserParameterizedTest {
+public class CreateUserParameterizedTest extends SetUpURL {
     private final CreateUser invalidUserCredentials;
 
     public CreateUserParameterizedTest(CreateUser invalidUserCredentials) {
         this.invalidUserCredentials = invalidUserCredentials;
-    }
-
-    @Before
-    public void setUp(){
-        RestAssured.baseURI = APP_URL;
     }
 
     @Parameterized.Parameters

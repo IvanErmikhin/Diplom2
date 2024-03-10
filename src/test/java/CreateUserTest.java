@@ -1,9 +1,7 @@
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import static com.example.diplom_2.Config.*;
@@ -11,12 +9,7 @@ import static com.example.diplom_2.UserController.*;
 import static org.apache.http.HttpStatus.*;
 import static org.hamcrest.Matchers.*;
 
-public class CreateUserTest {
-
-    @Before
-    public void setUp() {
-        RestAssured.baseURI = APP_URL;
-    }
+public class CreateUserTest extends SetUpURL {
 
     @Test
     @DisplayName("Создать уникального пользователя")

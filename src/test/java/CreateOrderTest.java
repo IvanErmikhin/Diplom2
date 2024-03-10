@@ -2,10 +2,8 @@ import com.example.diplom_2.CreateOrder;
 import com.example.diplom_2.LoginUser;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.Test;
 
 import static com.example.diplom_2.Config.*;
@@ -14,13 +12,10 @@ import static com.example.diplom_2.UserController.*;
 import static org.apache.http.HttpStatus.*;
 import static org.hamcrest.Matchers.*;
 
-public class CreateOrderTest {
+public class CreateOrderTest extends SetUpURL {
 
     private static String token;
-    @Before
-    public void setUp() {
-        RestAssured.baseURI = APP_URL;
-    }
+
 
     @Test
     @DisplayName("Проверка создания заказа")

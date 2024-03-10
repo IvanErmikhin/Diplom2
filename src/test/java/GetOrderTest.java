@@ -1,10 +1,8 @@
 import com.example.diplom_2.OrderController;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.Test;
 
 
@@ -16,13 +14,9 @@ import static org.apache.http.HttpStatus.SC_UNAUTHORIZED;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class GetOrderTest {
+public class GetOrderTest extends SetUpURL {
     private static String token;
 
-    @Before
-    public void setUp() {
-        RestAssured.baseURI = APP_URL;
-    }
 
     @Test
     @DisplayName("Получение заказов авторизованного пользователя")
